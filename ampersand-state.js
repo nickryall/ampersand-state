@@ -143,7 +143,7 @@ _.extend(Base.prototype, BBEvents, {
                 // if this is a child model or collection
                 if (this._children[attr] || this._collections[attr]) {
                     if (this._collections[attr] && options.reset) {
-                        this[attr].reset(newVal);
+                        this[attr].reset(newVal, { parse: options.parse });
                     } else {
                         this[attr].set(newVal, options);
                     }
